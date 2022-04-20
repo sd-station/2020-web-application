@@ -1,0 +1,62 @@
+<!-- #region : Input Information -->
+<aside id="section-input-information" style="width: 100%;max-width: 800px;">
+
+
+    <section class="action-box ">
+        <div>
+            <button id="frm-form-handler-btn-reset" class="icon-btn" data-icon="icon-export">
+                <span>Clear</span>
+            </button>
+
+        </div>
+        <div>
+            <button id="frm-form-handler-btn-save" class="icon-btn btn-action" data-icon="icon-disk">
+                <span>Save Changes</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- #region : Form Handler-->
+    <div class="form-cover span-top large-mode gray-theme subject-editor border-box">
+
+        <form id="frm-form-handler" action="" method="post">
+            <legend>Source Editor</legend>
+
+
+            <div class="form-content">
+                 <label>
+                    <span>Parse Mode: </span>
+                    <select id="frm-form-handler-select-way" type="number" readonly="true" name="">
+                        <option value="markdown-text">Document</option>
+                        <option value="html-content">Html Tag</option>
+                        <option value="typescript-content">TypeScript Interface</option>
+                        <option value="sql-syntax">Sql Syntax</option>
+                        <option value="csharp-class">Csharp Class</option>
+                    </select>
+                </label>
+                <label class="block-mode dark-theme">
+                    <span>Source Data: </span>
+                    <pre class="extend font-104 input-box" contenteditable="true" type="text" name=""
+                        id="frm-form-handler-txt-input" spellcheck="false"></pre>
+                </label>
+                <label class="block-mode dark-theme">
+                    <span>Additional Parameters: </span>
+                    <textarea class="parameter" type="text" name="" id="frm-Additional-Information-txt-input"
+                        spellcheck="false"></textarea>
+                </label>
+            </div>
+
+
+
+
+        </form>
+    </div>
+
+
+</aside>
+
+<style>
+    textarea.parameter{
+        font-size: 16px;
+    }
+</style>

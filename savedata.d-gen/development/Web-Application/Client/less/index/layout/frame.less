@@ -1,0 +1,279 @@
+//main: ../#index-index.less
+
+
+* {
+    box-sizing: border-box;
+}
+
+.slide-card {
+    width: 300px;
+    height: 450px;
+}
+
+.android-tablet {
+    width: 600px;
+    height: 900px;
+    transition: 0.5s;
+
+    &.scaleD2 {
+        transform: scale(0.5);
+        transform-origin: 0 0;
+        margin-right: $width /2 *-1;
+        margin-bottom: $height /2 *-1;
+    }
+
+    :fullscreen & {
+        transform: scale(1);
+        z-index: 10;
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+}
+
+body {
+    background-color: #212121;
+    color: #acacac;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.page-main {
+    width: calc(100vw - 20px);
+    margin: 0 auto;
+}
+
+slide-group {
+    display: flex;
+    gap: 5px;
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+        background-color: #212121;
+        height: 10px;
+
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #707070;
+
+
+    }
+}
+
+slide-item {
+    display: flex;
+    flex-basis: 310px;
+    min-width: 310px;
+    flex-direction: column;
+    background-color: #161616;
+    border-radius: 15px;
+    padding-bottom: 10px;
+    overflow: hidden;
+
+    margin: 2px;
+    margin-bottom: 10px;
+
+    &.full-mode {
+        //todo: request full screen
+        background-color: #000;
+        z-index: 20;
+        padding: 20;
+    }
+
+
+    &.is-selected {
+        outline: 1px dashed #a4a705;
+
+    }
+}
+
+slide-title {
+    display: block;
+    padding: 5px;
+    color: #909090;
+    font-size: larger;
+    text-align: center;
+    user-select: none;
+
+    &:hover {
+        cursor: pointer;
+        filter: drop-shadow(1px 1px 1px #000);
+        transition: 0.5s;
+    }
+
+    .is-selected & {
+        color: white;
+    }
+}
+
+slide-content {
+
+    padding: 2px;
+
+    canvas {
+        margin: 2px;
+        border-radius: 10px;
+    }
+
+    color: #000000;
+    // border: 1px solid black;
+
+    :fullscreen & {
+        flex-grow: 1;
+        display: flex;
+    }
+}
+
+:lang(fa) {
+    direction: rtl;
+    font-family: shabnam;
+}
+
+h3 {
+    margin: 0;
+    margin-bottom: 10px;
+    font-weight: 400;
+    border-bottom: 1px solid #363636;
+    background-color: #212121;
+    padding-bottom: 5px;
+    user-select: none;
+    white-space: nowrap;
+    padding-left: 15px;
+
+    &:not(:first-child) {
+        padding-top: 120px;
+    }
+
+}
+
+iframe {
+    border: none;
+
+}
+
+preview-box {
+    position: relative;
+    display: block;
+}
+
+.full-screen {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: transparent;
+    outline: none;
+    border: none;
+
+    svg {
+        height: 32px;
+        width: 32px;
+
+        path {
+            fill: white;
+        }
+
+
+
+    }
+
+    filter: drop-shadow(1px 1px 1px #ccc);
+
+    &:hover {
+        cursor: pointer;
+        filter: drop-shadow(1px 1px 1px #000);
+        transition: 0.5s;
+    }
+
+    .inactive-hide {
+        opacity: 0;
+    }
+
+    :fullscreen & {
+        filter: drop-shadow(1px 1px 1px #fff);
+
+        .inactive-hide {
+            opacity: 1;
+        }
+
+        .active-hide {
+            opacity: 0;
+        }
+
+        svg {
+
+            path {
+                fill: black;
+            }
+
+
+
+        }
+    }
+}
+
+.stat-group {
+
+    display: flex;
+
+    .one-step {
+        background-color: transparent;
+        height: 32px;
+        width: 32px;
+        border: none;
+        background-image: url(/assets/img/right-arrow-svgrepo-com.svg);
+        color: #707070;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        margin-right: -4px;
+        border: none;
+        outline: none;
+
+
+        span {
+            display: none;
+        }
+
+        &:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        &.exist {
+            color: #cfcfcf;
+            background-image: url(/assets/img/right-arrow-white.svg);
+
+        }
+    }
+
+    :fullscreen & {
+        flex-direction: column;
+        margin-top: 50px;
+
+        .one-step {
+            width: unset;
+            background-color: transparent;
+            height: 40px;
+            border: none;
+            background-image: url(/assets/img/right-arrow-svgrepo-com.svg);
+            color: #707070;
+            background-repeat: no-repeat;
+            padding: 5px 10px 5px 50px;
+            margin: 2px 2px 2px 20px;
+            display: block;
+
+            span {
+                display: block;
+            }
+
+            &:hover {
+                text-decoration: underline;
+                cursor: pointer;
+            }
+
+            &.exist {
+                color: #cfcfcf;
+                background-image: url(/assets/img/right-arrow-white.svg);
+
+            }
+        }
+    }
+}

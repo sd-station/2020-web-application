@@ -1,0 +1,10 @@
+{
+    "window.title": "⚒ D-Gen",
+    "workbench.colorCustomizations": {
+        "list.activeSelectionBackground": "#33a355ca",
+        "list.inactiveSelectionBackground": "#1c582eca",
+        "activityBar.background": "#281880",
+        "titleBar.activeBackground": "#3822B4",
+        "titleBar.activeForeground": "#FDFCFE"
+    }
+}

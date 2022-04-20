@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/form-handler.css">
+    <script type="module" defer async src="/js/form-handler.js"></script>
+
+    <link rel="stylesheet" href="/html/content/prism.css">
+    <link rel="stylesheet" href="/html/content/prism-my-markdown.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <style>
+        textarea {
+            white-space: nowrap;
+        }
+    </style>
+    <nav>
+        <button class="switch-button active" data-switch="#section-input-information">Souce</button>
+        <button class="switch-button active" data-switch="#server-preview">Server Preview</button>
+        <button class="switch-button active" data-switch="#json-preview">Json</button>
+        <button class="switch-button active" data-switch="#html-preview">HtmlCode</button>
+        <button class="switch-button active" data-switch="#ts-preview">TypeScript</button>
+    </nav>
+
+    <article>
+        
+    </article>
+    <main class="flex -column" style="width:4800px; ">
+
+        <!-- #region : Input Information -->
+        <aside id="section-input-information" style="width: 100%;max-width: 800px;">
+
+            <h1>Input Information</h1>
+            <section class="action-box ">
+                <div>
+                    <button id="frm-form-handler-btn-export" class="icon-btn" data-icon="icon-export">
+                        <span>Export</span>
+                    </button>
+
+                </div>
+                <div>
+                    <button class="icon-btn btn-action" data-icon="icon-disk">
+                        <span>Save Section Data</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- #region : Form Handler-->
+            <div class="form-cover span-top large-mode gray-theme subject-editor border-box">
+
+                <form id="frm-form-handler" action="" method="post">
+                    <legend>Form Handler</legend>
+
+                    <div class="form-content">
+                        <label>
+                            <span>Input Mode: </span>
+                            <select id="frm-form-handler-select-way" type="number" readonly="true" name="">
+                                <option value="markdown-text">Mark Down</option>
+                                <option value="html-content">Html Content</option>
+                                <option value="typescript-content">TypeScript</option>
+                                <option value="sql-syntax">Sql Syntax</option>
+                                <option value="csharp-class">Csharp Class</option>
+                            </select>
+                        </label>
+                        <label class="block-mode dark-theme">
+                            <span>Basic Information: </span>
+                            <pre class="extend font-104 input-box" contenteditable="true" type="text" name=""
+                                id="frm-form-handler-txt-input" spellcheck="false"></pre>
+                        </label>
+
+                        <label class="block-mode dark-theme">
+                            <span>Addtional Information: </span>
+                            <textarea class="" type="text" name="" id="frm-Additional-Information-txt-input"
+                                spellcheck="false"></textarea>
+                        </label>
+                    </div>
+                </form>
+            </div>
+
+
+        </aside>
+
+        <aside id="html-preview" class="hide">
+            <article>
+                <h3 class="output-header"> Html Mobile Preview : </h3>
+                <iframe class="preview-box" data-function="clear" src="./form-handler-test-environment.html"></iframe>
+                <h3 class="output-header"> Html Data : </h3>
+                <section class="report-box" data-function="clear"></section>
+            </article>
+        </aside>
+
+        <aside id="server-preview" class="hide">
+            <article>
+                <h1>Local Store Server</h1>
+                <h3 class="output-header"> Api: </h3>
+                <section id="localstore-server-api" class="typescript"></section>
+                <h3 class="output-header"> Server Controller For Index: </h3>
+                <section id="server-preview-container"></section>
+            </article>
+        </aside>
+
+        <aside id="json-preview" class="hide">
+            <article>
+                <h1>Communication To Client</h1>
+                <h3 class="output-header"> Json Data : </h3>
+                <section id="json-preview-container"></section>
+            </article>
+        </aside>
+
+
+        
+
+        <aside id="ts-preview" class="hide">
+            <article>
+                <h3 class="output-header"> Api Declaration : </h3>
+                <section class="type-box" style="color: lightgreen;"></section>
+                <h3 class="output-header"> From Handler : </h3>
+                <section id="export-ts-form-handler" class="type-box" style="color: lightblue;"></section>
+                <h3 class="output-header"> Form Provider : </h3>
+                <section id="export-ts-form-provider" class="report-box" data-function="clear"></section>
+            </article>
+        </aside>
+
+    </main>
+
+    <script src="/html/content/prism.js" data-manual></script>
+    
+    <script src="/js/start/script.js"></script>
+
+
+
+</body>
+
+</html>

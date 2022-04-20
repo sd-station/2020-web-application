@@ -1,0 +1,84 @@
+<article class="output-page">
+
+    <h1>Assistant Library</h1>
+     
+<h2>Type Script</h2>
+    <h3 class="output-header">Declaration of send-date-api (Shared)</h3>
+    <pre class="output-code">
+
+
+declare module "send-date-api" {
+    export interface ISendData {
+        //>> Path Of Work username/app/project/folder
+        path: string,
+        //>> Controller/Delete|Edit|Create/id 
+        request: string,
+
+        //>> Attachment
+        data: string
+
+        //>> Authentication
+        token:string,
+    }
+
+    //>> Next version
+    //>> In return we can sent a key for editing that data then start to edit
+}
+</pre>
+
+
+
+
+
+    <h3 class="output-header">handle-form-data</h3>
+
+    <pre class="output-code">
+async function handleFormSubmit(event: Event) {
+    event.preventDefault();
+    const form = event.currentTarget as HTMLFormElement;
+    const url = form.action;
+    try {
+        const formData = new FormData(form);
+        const responseData = await postFormDataAsJson(url, formData);
+        console.log({ responseData });
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+
+
+/**
+* Helper function for POSTing data as JSON with fetch.
+*
+* @param {Object} options
+* @param {string} options.url - URL to POST data to
+* @param {FormData} options.formData - \`FormData\` instance
+* @return {Object} - Response body from URL that was POSTed to
+*/
+async function postFormDataAsJson(url: string, formData: FormData) {
+
+    const plainFormData = Object.fromEntries(formData.entries());
+    const formDataJsonString = JSON.stringify(plainFormData);
+
+    const fetchOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+        },
+        body: formDataJsonString,
+    };
+
+    const response = await fetch(url, fetchOptions);
+
+    if (!response.ok) {
+        const errorMessage = await response.text();
+        throw new Error(errorMessage);
+    }
+
+    return response.json();
+}
+
+</pre>
+</article>

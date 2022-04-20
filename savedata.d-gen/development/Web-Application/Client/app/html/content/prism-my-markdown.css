@@ -1,0 +1,24 @@
+.tag-color {
+  color: #6585dd;
+}
+.field-color {
+  color: orange;
+}
+.container-color {
+  color: #d400ff;
+}
+.id-color {
+  color: yellow;
+}
+.class-color {
+  color: lightgreen;
+}
+.equal-color {
+  color: #707070;
+}
+.equal-color .eq-key-word {
+  color: #cf37dd;
+}
+.equal-color .eq-key-word:nth-child(1) {
+  color: #91279b;
+}

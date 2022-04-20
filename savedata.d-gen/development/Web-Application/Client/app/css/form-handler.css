@@ -1,0 +1,22 @@
+iframe.preview-box {
+  width: 600px;
+  height: 900px;
+}
+h3 {
+  color: plum;
+}
+.switch-button {
+  border: none;
+  outline: none;
+}
+.switch-button.active {
+  background-color: #8c00ff;
+}
+.font-104 {
+  font-size: 1.4rem;
+}
+.input-box {
+  border: 1px dashed #707070;
+  outline: none;
+  padding: 15px;
+}

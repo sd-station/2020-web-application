@@ -1,0 +1,127 @@
+//main: ../#index-index.less
+
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+}
+.flex {
+    display: flex;
+
+    &.fx-vertical, &.-vertical ,&.-v {
+        flex-direction: column;
+    }
+
+    &.wrap-mode {
+        flex-wrap: wrap;
+    }
+
+    .fx-extend , .-extend{
+        flex-grow: 1;
+    }
+}
+.fx-extend {
+    flex-grow: 1;
+}
+h2 {
+    font-weight: 400;
+    border-bottom: 1px solid #363636;
+    background-color: #212121;
+    padding-bottom: 5px;
+    user-select: none;
+    white-space: nowrap;
+}
+
+button {
+    background-color: #212121;
+    color: #cfcfcf;
+    border: none;
+
+    &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+}
+
+
+.icon-btn {
+
+    user-select: none;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: 5px;
+
+    span {
+        padding: 0 10px;
+        white-space: nowrap;
+    }
+
+    ;
+
+    svg {
+        width: 30px;
+        height: 30px;
+
+
+    }
+
+    &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+        box-shadow: 0 60px 10px #363636 inset;
+        //transition: 0.3s;
+    }
+}
+
+.txt-purple {
+    color: #9c27b0;
+}
+
+
+.action-box {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px 0 5px 0;
+    border-top: 1px solid #363636;
+    padding: 10px 10px 0 10px;
+}
+
+.btn-action {
+    background-color: rgb(177, 85, 0);
+    color: #fff;
+
+    path {
+        fill: white;
+    }
+}
+
+
+.green-theme {
+    &.border-box {
+        border-color: green;
+    }
+
+    legend {
+        background-color: darken(green, 10%);
+    }
+}
+
+.purple-theme {
+    &.border-box {
+        border-color: purple;
+    }
+
+    legend {
+        background-color: darken(purple, 10%);
+    }
+}
+
+.scale-1d2 {
+    transform: scale(0.5);
+}
+
+.hide{
+    display: none;
+}
